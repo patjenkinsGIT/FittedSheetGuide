@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Fitted Sheet Guide</title>
+<meta name="description" content="How a frustrated guy, a cast iron trivet, and a dog in a donut cone led to the invention of the candy cane method for folding fitted sheets.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --linen:#f5f0e8;--linen-mid:#ede6d6;--linen-dark:#d4c9b0;
+  --ink:#1a1714;--ink-mid:#4a4540;--ink-light:#8a837a;
+  --sage:#6b7c6e;--sage-light:#e8ede9;--rust:#b85c38;--white:#fdfcf9;
+  --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--max:680px
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{background:var(--linen);border-bottom:1px solid var(--linen-dark);padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem}
+.nav-links a{font-size:.9rem;color:var(--ink-mid);text-decoration:none;font-weight:400}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.active{color:var(--ink);font-weight:500}
+
+/* HERO */
+.hero{background:var(--linen);border-bottom:1px solid var(--linen-dark);padding:3.5rem 1.5rem 3rem;text-align:center}
+.eyebrow{display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);font-weight:500;margin-bottom:1rem}
+h1{font-family:var(--serif);font-size:clamp(2rem,5vw,2.75rem);line-height:1.15;color:var(--ink);max-width:560px;margin:0 auto .75rem}
+h1 em{font-style:italic;color:var(--rust)}
+.hero-lede{font-size:1.05rem;color:var(--ink-mid);max-width:480px;margin:0 auto;font-weight:300;line-height:1.65}
+
+/* MAIN */
+main{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+
+/* ORIGIN STORY */
+.story{padding:3rem 0}
+.story p{font-size:1rem;color:var(--ink-mid);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.story p:last-child{margin-bottom:0}
+.story strong{color:var(--ink);font-weight:500}
+.story em{color:var(--sage);font-style:italic}
+
+/* PULL QUOTE */
+.pull-quote{background:var(--sage-light);border-left:3px solid var(--sage);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:2rem 0;font-family:var(--serif);font-size:1.2rem;color:var(--ink);line-height:1.5;font-style:italic}
+
+/* PHOTO BLOCKS */
+.photo-block{margin:2rem 0;border-radius:12px;overflow:hidden;border:1px solid var(--linen-dark)}
+.photo-block img{width:100%;display:block}
+.photo-caption{padding:.75rem 1rem;background:var(--linen);font-size:.85rem;color:var(--ink-light);font-style:italic;text-align:center}
+
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:2rem 0}
+.photo-grid-item{border-radius:10px;overflow:hidden;border:1px solid var(--linen-dark)}
+.photo-grid-item img{width:100%;display:block;aspect-ratio:1;object-fit:cover}
+.photo-grid-item .cap{padding:.5rem .75rem;background:var(--linen);font-size:.8rem;color:var(--ink-light);font-style:italic;text-align:center}
+
+/* SECTION HEADING */
+.section-h{font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin:2.5rem 0 1rem}
+
+/* METHOD BOX */
+.method-box{background:var(--linen);border:1px solid var(--linen-dark);border-radius:12px;padding:1.5rem;margin:2rem 0}
+.method-box h3{font-family:var(--serif);font-size:1.15rem;margin-bottom:.75rem}
+.method-box p{font-size:.95rem;color:var(--ink-mid);line-height:1.7;font-weight:300}
+
+/* CTA */
+.cta-block{background:var(--ink);border-radius:12px;padding:2rem;margin:3rem 0;text-align:center}
+.cta-block h2{font-family:var(--serif);font-size:1.5rem;color:var(--white);margin-bottom:.5rem}
+.cta-block p{font-size:.95rem;color:#c2bdb5;font-weight:300;margin-bottom:1.25rem}
+.cta-btn{display:inline-block;background:var(--rust);color:var(--white);text-decoration:none;padding:.75rem 1.75rem;border-radius:100px;font-size:.95rem;font-weight:500;font-family:var(--sans);transition:opacity .2s}
+.cta-btn:hover{opacity:.85}
+
+/* FOOTER */
+footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align:center;padding:2rem 1.5rem;font-size:.85rem;color:var(--ink-light)}
+footer a{color:var(--ink-mid);text-decoration:none}
+footer a:hover{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">Fitted Sheet Guide</a>
+  <div class="nav-links">
+    <a href="/">Fold a Sheet</a>
+    <a href="/solo-sheet.html">Put a Sheet On</a>
+    <a href="/about.html" class="active">About</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="eyebrow">The origin story</span>
+  <h1>A trivet, a donut cone,<br>and <em>one frustrated Friday</em></h1>
+  <p class="hero-lede">How a boring afternoon, a cast iron trivet, and a dog recovering from surgery led to the candy cane method.</p>
+</div>
+
+<main>
+  <div class="story">
+
+    <p>I've been doing my own laundry for over 20 years. I own a bed. I buy sheets. And until a Friday in March 2026, I had never successfully folded a fitted sheet into anything resembling a neat rectangle. Every attempt ended the same way — a crumpled ball shoved into the back of the linen closet, hoping nobody would look.</p>
+
+    <p>I'd watched the videos. I'd tried the Martha Stewart method. I'd read the WikiHow articles with their baffling diagrams. Nothing clicked. The instructions always assumed you already knew the one thing they were supposed to be teaching.</p>
+
+    <div class="pull-quote">"It will look like a lumpy, curved mess when you first lay it down. That's completely normal. Don't panic and start over."</div>
+
+    <p>Nobody had ever told me that before. That single piece of information — that the blob is supposed to look like a blob — unlocked the whole thing.</p>
+
+    <h2 class="section-h">The Friday everything changed</h2>
+
+    <p>My dog Moses was recovering from surgery. He was wearing his donut cone and very much not interested in going anywhere. I had a "cameras up" work day — the kind where you're technically present but have mental bandwidth to spare.</p>
+
+  </div>
+
+  <!-- Moses photos -->
+  <div class="photo-grid">
+    <div class="photo-grid-item">
+      <img src="images/about/moses-1.jpg" alt="Moses the Newfoundland dog wearing a pink donut cone after surgery, looking stoic">
+      <div class="cap">Moses, deeply unimpressed</div>
+    </div>
+    <div class="photo-grid-item">
+      <img src="images/about/moses-2.jpg" alt="Moses wearing the donut cone from behind, paw prints on the vet clinic door in background">
+      <div class="cap">At the vet. Still judging.</div>
+    </div>
+  </div>
+
+  <div class="story">
+    <p>I cleared my dining table. I grabbed a sheet fresh from the laundry. And I decided that today was the day I was finally going to figure this out — not from a video, but by actually working through it step by step until it made sense.</p>
+
+    <p>An hour in, I was winning. But there was one problem: every time I walked from one end of the table to the other to grab the far corners, the first pair of nested corners would slide off. I needed something to hold them in place.</p>
+  </div>
+
+  <!-- Trivet photo -->
+  <div class="photo-block">
+    <img src="images/about/trivet.jpg" alt="Cast iron trivet holding down nested fitted sheet corners on a dark dining table, blue pants and tile floor visible">
+    <div class="photo-caption">The cast iron trivet that solved everything. Improvised tools are the best tools.</div>
+  </div>
+
+  <div class="story">
+    <p>I grabbed the cast iron trivet sitting on my counter and set it on top of the nested corners. <strong>Problem solved.</strong> The sheet stayed put, I walked to the far end, grabbed the remaining corners, and for the first time in my adult life — I had all four corners nested together.</p>
+
+    <p>But here's what I figured out next that nobody else teaches: after nesting the first two pairs, I slid my hands back inside both nested corner pockets — like putting on a hospital gown — and used that grip to push one pair through the other. When I picked the whole thing up and let it hang, it formed a smooth J-shape.</p>
+
+    <p><strong>The candy cane.</strong></p>
+
+    <p>That J-shape was the visual proof I'd always been missing. All four corners correctly nested. No guessing. No hoping. Just a clean curve that said: you've got it.</p>
+
+    <h2 class="section-h">Why I built this site</h2>
+
+    <p>After I finally cracked it, I went looking for a guide that explained it the way I'd just figured it out. There wasn't one. What existed was a collection of shaky iPhone videos, WikiHow diagrams that assumed knowledge they were supposed to impart, and tutorials written for right-handed people that never mentioned handedness once.</p>
+
+    <p>So I built it. Same day. I documented every step as I went — the exact hand positions, what you should be looking at at each stage, the re-mitten move nobody else mentions, and the cast iron trivet hack. I took the photos myself. I went from spending a morning failing to folding the sheet in under a minute.</p>
+
+    <div class="method-box">
+      <h3>🍬 The candy cane method</h3>
+      <p>Named for the J-shape the sheet makes when you pick it up after nesting all four corners. That shape is your proof — a visual checkpoint that tells you you've got it right before you ever start folding. No other fitted sheet guide uses this as a checkpoint. As far as I can tell, no one has documented this method before.</p>
+    </div>
+
+    <p>I sent the site to my sister for feedback. She called me immediately — before even looking at it — and told me she already knew how to fold a fitted sheet and didn't understand why I'd made this. We disagreed. She thought I was wasting my time.</p>
+
+    <p>Forty thousand people a month search for "how to fold a fitted sheet." Every one of them deserves a better answer than what was out there. That's why this exists.</p>
+
+    <p><em>— Pat, Tucker GA</em></p>
+    <p style="margin-top:.5rem;font-size:.9rem;color:var(--ink-light)">P.S. Moses is a 130 lb Newfoundland who actually gets excited when he sees the donut cone coming out. Five days post-surgery and he's been a total champ. Good boy, Moses. 🐾</p>
+
+  </div>
+
+  <div class="cta-block">
+    <h2>See the method that started it all</h2>
+    <p>Nine steps, one visual proof, and a perfect square every time.</p>
+    <a href="/" class="cta-btn">Try the candy cane method →</a>
+  </div>
+
+</main>
+
+<footer>
+  <p><a href="/">Fold a Sheet</a> · <a href="/solo-sheet.html">Put a Sheet On</a> · <a href="/about.html">About</a> · <a href="/legal.html">Legal</a></p>
+  <p style="margin-top:.5rem">© 2026 DailyProfits LLC · Fitted Sheet Guide</p>
+</footer>
+
+</body>
+</html>
