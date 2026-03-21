@@ -507,9 +507,7 @@ function goTo(i,skip){
   document.getElementById('sdsc').innerHTML=s.d;
   const ph=document.getElementById('step-photo');
   const pw=document.getElementById('photo-wrap');
-  pw.style.display='none';
-  ph.onload=function(){pw.style.display='block';};
-  ph.onerror=function(){pw.style.display='none';};
+  pw.style.display='block';
   ph.src=PHOTOS[cur].src;
   ph.alt=PHOTOS[cur].alt;
   document.getElementById('bdg').textContent='Step '+(cur+1)+' of 9';
