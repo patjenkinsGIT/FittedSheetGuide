@@ -394,9 +394,18 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
     </div><!-- /illus -->
 
-    <!-- Photo placeholder - swap src when real photos are ready -->
-    <div id="photo-wrap" style="display:flex;justify-content:center;background:var(--linen);padding:1.25rem 1.5rem;border-bottom:1px solid var(--linen-dark)">
-      <img id="step-photo" src="" alt="" style="max-width:480px;width:100%;display:block;border-radius:10px;border:1px solid var(--linen-dark);box-shadow:0 2px 12px rgba(26,23,20,.08)">
+    <!-- Photo thumbnail -->
+    <div id="photo-wrap" style="display:none;border-bottom:1px solid var(--linen-dark);padding:.6rem 1.5rem;background:var(--linen);display:flex;align-items:center;gap:.75rem;cursor:pointer" onclick="openLightbox()">
+      <img id="step-photo" src="" alt="" style="width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--linen-dark);flex-shrink:0">
+      <span style="font-size:.85rem;color:var(--sage);font-weight:500">View photo →</span>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,23,20,.85);align-items:center;justify-content:center;padding:1.5rem;cursor:pointer" onclick="closeLightbox()">
+      <div style="position:relative;max-width:640px;width:100%" onclick="event.stopPropagation()">
+        <img id="lb-img" src="" alt="" style="width:100%;display:block;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3)">
+        <button onclick="closeLightbox()" style="position:absolute;top:-12px;right:-12px;width:32px;height:32px;border-radius:50%;border:none;background:var(--white);color:var(--ink);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2)">✕</button>
+      </div>
     </div>
 
     <div class="step-text">
@@ -516,7 +525,7 @@ function goTo(i,skip){
   document.getElementById('sdsc').innerHTML=s.d;
   const ph=document.getElementById('step-photo');
   const pw=document.getElementById('photo-wrap');
-  pw.style.display='block';
+  pw.style.display='flex';
   ph.src=PHOTOS[cur].src;
   ph.alt=PHOTOS[cur].alt;
   document.getElementById('bdg').textContent='Step '+(cur+1)+' of 9';
@@ -576,9 +585,23 @@ function wf(){
 goTo(0,true);
 dts.children[0].classList.add('on');
 document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeLightbox();
   if(e.key==='ArrowRight')nav(1);
   if(e.key==='ArrowLeft')nav(-1);
 });
+
+function openLightbox(){
+  const lb=document.getElementById('lightbox');
+  const img=document.getElementById('lb-img');
+  img.src=PHOTOS[cur].src;
+  img.alt=PHOTOS[cur].alt;
+  lb.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display='none';
+  document.body.style.overflow='';
+}
 </script>
 </body>
 </html>
