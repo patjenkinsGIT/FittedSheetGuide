@@ -279,26 +279,38 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         </div>
       </div>
 
-      <!-- Step 4: Right into left — candy cane appears (J-shape proof) -->
+      <!-- Step 4: Right into left — candy cane appears -->
       <div id="sc4" class="sc">
-        <div class="diag">
-          <div style="width:90%;height:460px;display:flex;align-items:center;justify-content:center">
-            <svg width="220" height="380" viewBox="0 0 220 380" fill="none" style="animation:candySwing 3s ease-in-out infinite;transform-origin:100px 30px">
-              <path d="M90,40 L90,280 Q90,340 150,340 Q210,340 210,280 L210,220" stroke="#7A9E8E" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
-              <path d="M90,40 L90,280 Q90,340 150,340 Q210,340 210,280 L210,220" stroke="#EDE8E1" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="120" y1="40" x2="120" y2="220" stroke="#7A9E8E" stroke-width="24" stroke-linecap="round" opacity=".3"/>
-              <line x1="120" y1="40" x2="120" y2="220" stroke="#EDE8E1" stroke-width="18" stroke-linecap="round"/>
-              <ellipse cx="105" cy="30" rx="60" ry="26" fill="#EDE8E1" stroke="#7A9E8E" stroke-width="2"/>
-              <text x="105" y="26" text-anchor="middle" fill="#2C2C2C" font-size="12" font-weight="500" font-family="'DM Sans',sans-serif">all 4 corners</text>
-              <text x="105" y="40" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">bundled here</text>
-              <rect x="10" y="290" width="100" height="36" rx="12" fill="#B8C5CC"/>
-              <text x="60" y="305" text-anchor="middle" fill="#2C2C2C" font-size="13" font-weight="500" font-family="'DM Sans',sans-serif">J-shape</text>
-              <text x="60" y="319" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">candy cane</text>
+        <div class="diag" style="gap:12px">
+          <!-- Overlapping circles: push-through -->
+          <div id="s4wrap" style="width:90%;display:flex;align-items:center;justify-content:center;position:relative;margin-top:16px">
+            <div id="s4hold" class="doval" style="width:150px;height:150px;z-index:1">
+              <div style="color:#2C2C2C;font-size:14px;font-weight:500" id="s4hold-label">left hand open</div>
+              <div style="color:#2C2C2C;font-size:13px">holds elastic</div>
+            </div>
+            <div id="s4push" class="doval" style="width:130px;height:130px;background:#C8D4C0;margin-left:-36px;z-index:2">
+              <div style="color:#2C2C2C;font-size:14px;font-weight:500" id="s4push-label">right pair</div>
+              <div style="color:#2C2C2C;font-size:13px" id="s4push-dir">← pushes in</div>
+            </div>
+          </div>
+          <!-- Candy cane J-shape result -->
+          <div style="width:90%;display:flex;justify-content:center">
+            <svg width="140" height="220" viewBox="0 0 200 320" fill="none" style="animation:candySwing 3s ease-in-out infinite;transform-origin:90px 25px">
+              <path d="M80,35 L80,240 Q80,300 140,300 Q200,300 200,240 L200,190" stroke="#7A9E8E" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
+              <path d="M80,35 L80,240 Q80,300 140,300 Q200,300 200,240 L200,190" stroke="#EDE8E1" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="108" y1="35" x2="108" y2="190" stroke="#7A9E8E" stroke-width="22" stroke-linecap="round" opacity=".3"/>
+              <line x1="108" y1="35" x2="108" y2="190" stroke="#EDE8E1" stroke-width="16" stroke-linecap="round"/>
+              <ellipse cx="94" cy="25" rx="52" ry="22" fill="#EDE8E1" stroke="#7A9E8E" stroke-width="2"/>
+              <text x="94" y="22" text-anchor="middle" fill="#2C2C2C" font-size="11" font-weight="500" font-family="'DM Sans',sans-serif">all 4 corners</text>
+              <text x="94" y="35" text-anchor="middle" fill="#2C2C2C" font-size="10" font-family="'DM Sans',sans-serif">bundled</text>
+              <rect x="5" y="255" width="90" height="30" rx="10" fill="#B8C5CC"/>
+              <text x="50" y="268" text-anchor="middle" fill="#2C2C2C" font-size="11" font-weight="500" font-family="'DM Sans',sans-serif">J-shape</text>
+              <text x="50" y="280" text-anchor="middle" fill="#2C2C2C" font-size="10" font-family="'DM Sans',sans-serif">candy cane</text>
             </svg>
           </div>
-          <div class="dcap">
-            <div class="dcap-1">pick it up and let it hang — you should see the candy cane</div>
-            <div class="dcap-2">smooth J-shape confirms all four corners are correctly nested</div>
+          <div class="dcap" style="margin-top:4px">
+            <div class="dcap-1" id="s4cap1">hold elastic edge open with left hand</div>
+            <div class="dcap-2" id="s4cap2">push right nested pair through — candy cane confirms it worked</div>
           </div>
         </div>
       </div>
@@ -623,6 +635,16 @@ function setHand(h){
   document.getElementById('tabR').classList.toggle('active',h==='right');
   document.getElementById('tabL').classList.toggle('active',h==='left');
   document.getElementById('sdsc').innerHTML=getS()[cur].d;
+  // Flip step 4 diagram for handedness
+  const isL=h==='left';
+  document.getElementById('s4wrap').style.flexDirection=isL?'row-reverse':'row';
+  document.getElementById('s4hold-label').textContent=isL?'right hand open':'left hand open';
+  document.getElementById('s4push-label').textContent=isL?'left pair':'right pair';
+  document.getElementById('s4push-dir').textContent=isL?'pushes in →':'← pushes in';
+  document.getElementById('s4push').style.marginLeft=isL?'0':'-36px';
+  document.getElementById('s4push').style.marginRight=isL?'-36px':'0';
+  document.getElementById('s4cap1').textContent=isL?'hold elastic edge open with right hand':'hold elastic edge open with left hand';
+  document.getElementById('s4cap2').textContent=isL?'push left nested pair through — candy cane confirms it worked':'push right nested pair through — candy cane confirms it worked';
 }
 
 goTo(0,true);
