@@ -98,7 +98,7 @@ main{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
 .handedness-toggle{display:flex;background:var(--white);border:1px solid var(--linen-dark);border-radius:100px;padding:2px;gap:2px}
 .htab{padding:4px 14px;font-family:var(--sans);border:none;cursor:pointer;border-radius:100px;background:transparent;color:var(--ink-mid);font-size:12px;transition:background .2s,color .2s}
 .htab.active{background:var(--ink);color:var(--white);font-weight:500}
-.illus{position:relative;height:540px;background:#F5F0EB;overflow:hidden;border-bottom:1px solid var(--linen-dark)}
+.illus{position:relative;height:580px;background:#F5F0EB;overflow:hidden;border-bottom:1px solid var(--linen-dark)}
 .step-badge{position:absolute;top:12px;left:12px;background:var(--white);border:1px solid var(--linen-dark);border-radius:100px;padding:3px 12px;font-size:11px;color:var(--ink-mid);z-index:10;font-weight:500}
 .sc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;pointer-events:none}
 .sc.on{opacity:1;pointer-events:all}
@@ -198,6 +198,12 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         <button class="htab active" id="tabR" onclick="setHand('right')">Right-handed</button>
         <button class="htab" id="tabL" onclick="setHand('left')">Left-handed</button>
       </div>
+    </div>
+
+    <div class="nav-bar" style="border-bottom:1px solid var(--linen-dark);padding:.6rem 1.5rem">
+      <button class="nav-btn" id="bpv2" onclick="nav(-1)" disabled>←</button>
+      <div class="dots" id="dts2"></div>
+      <button class="nav-btn" id="bnx2" onclick="nav(1)">→</button>
     </div>
 
     <div class="illus">
@@ -593,16 +599,22 @@ const SL=SR.map((s,i)=>{
 let hand='right',cur=0;
 function getS(){return hand==='right'?SR:SL;}
 const dts=document.getElementById('dts');
-for(let i=0;i<9;i++){const d=document.createElement('div');d.className='dot';d.onclick=(i=>()=>goTo(i))(i);dts.appendChild(d);}
+const dts2=document.getElementById('dts2');
+for(let i=0;i<9;i++){
+  const d=document.createElement('div');d.className='dot';d.onclick=(i=>()=>goTo(i))(i);dts.appendChild(d);
+  const d2=document.createElement('div');d2.className='dot';d2.onclick=(i=>()=>goTo(i))(i);dts2.appendChild(d2);
+}
 
 function goTo(i,skip){
   const p=getS()[cur];
   if(!skip)document.getElementById('sc'+(cur+1)).classList.remove('on');
   dts.children[cur].classList.remove('on');
+  dts2.children[cur].classList.remove('on');
   cur=i;
   const s=getS()[cur];
   document.getElementById('sc'+(cur+1)).classList.add('on');
   dts.children[cur].classList.add('on');
+  dts2.children[cur].classList.add('on');
   document.getElementById('snum').textContent=s.n;
   document.getElementById('stit').textContent=s.t;
   document.getElementById('sdsc').innerHTML=s.d;
@@ -613,7 +625,9 @@ function goTo(i,skip){
   ph.alt=PHOTOS[cur].alt;
   document.getElementById('bdg').textContent='Step '+(cur+1)+' of 9';
   const pv=document.getElementById('bpv'),nx=document.getElementById('bnx');
+  const pv2=document.getElementById('bpv2'),nx2=document.getElementById('bnx2');
   pv.disabled=cur===0;nx.disabled=cur===8;
+  pv2.disabled=cur===0;nx2.disabled=cur===8;
 }
 
 function nav(d){const n=cur+d;if(n>=0&&n<9)goTo(n);}
