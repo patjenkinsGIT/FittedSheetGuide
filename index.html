@@ -215,8 +215,8 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
             </div>
             <div class="dside dside-l">long side</div>
             <div class="dside dside-r">long side</div>
-            <div class="dbadge" style="bottom:16px;left:16px"><div>L mitten</div><div>seam out</div></div>
-            <div class="dbadge" style="bottom:16px;right:16px"><div>R mitten</div><div>seam out</div></div>
+            <div class="dbadge" style="bottom:16px;left:16px"><div data-hand="L">L mitten</div><div>seam out</div></div>
+            <div class="dbadge" style="bottom:16px;right:16px"><div data-hand="R">R mitten</div><div>seam out</div></div>
           </div>
           <div class="dcap">
             <div class="dcap-1">short end — start here</div>
@@ -240,8 +240,8 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
             </div>
             <div class="dside dside-l">long side</div>
             <div class="dside dside-r">long side</div>
-            <div class="dbadge dbadge-green" style="bottom:16px;left:16px"><div>near L</div><div>inside</div></div>
-            <div class="dbadge dbadge-green" style="bottom:16px;right:16px"><div>near R</div><div>inside</div></div>
+            <div class="dbadge dbadge-green" style="bottom:16px;left:16px"><div data-hand="L">near L</div><div>inside</div></div>
+            <div class="dbadge dbadge-green" style="bottom:16px;right:16px"><div data-hand="R">near R</div><div>inside</div></div>
           </div>
           <div class="dcap">
             <div class="dcap-1">near corners are now nested inside far corners</div>
@@ -256,12 +256,12 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
           <div style="width:90%;height:410px;display:flex;flex-direction:column;align-items:center;padding-top:40px">
             <div style="display:flex;gap:24px;width:100%;justify-content:center">
               <div class="doval" style="width:140px;height:100px">
-                <div style="color:#2C2C2C;font-size:14px;font-weight:500">left pair</div>
-                <div style="color:#2C2C2C;font-size:12px">near L inside</div>
+                <div style="color:#2C2C2C;font-size:14px;font-weight:500" data-hand="L">left pair</div>
+                <div style="color:#2C2C2C;font-size:12px" data-hand="L">near L inside</div>
               </div>
               <div class="doval" style="width:140px;height:100px">
-                <div style="color:#2C2C2C;font-size:14px;font-weight:500">right pair</div>
-                <div style="color:#2C2C2C;font-size:12px">near R inside</div>
+                <div style="color:#2C2C2C;font-size:14px;font-weight:500" data-hand="R">right pair</div>
+                <div style="color:#2C2C2C;font-size:12px" data-hand="R">near R inside</div>
               </div>
             </div>
             <svg width="280" height="160" viewBox="0 0 280 160" fill="none" style="margin-top:-6px">
@@ -282,20 +282,20 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
       <!-- Step 4: Right into left — candy cane appears -->
       <div id="sc4" class="sc">
         <div class="diag">
-          <div style="width:90%;height:410px;display:flex;align-items:center;justify-content:center;position:relative">
-            <div class="doval" style="width:180px;height:180px;z-index:1">
-              <div style="color:#2C2C2C;font-size:14px;font-weight:500">left hand open</div>
+          <div id="s4wrap" style="width:90%;height:410px;display:flex;align-items:center;justify-content:center;position:relative">
+            <div id="s4hold" class="doval" style="width:180px;height:180px;z-index:1">
+              <div style="color:#2C2C2C;font-size:14px;font-weight:500" id="s4hold-label">left hand open</div>
               <div style="color:#2C2C2C;font-size:13px">holds elastic</div>
             </div>
-            <div class="doval" style="width:150px;height:150px;background:#C8D4C0;margin-left:-40px;z-index:2">
-              <div style="color:#2C2C2C;font-size:14px;font-weight:500">right pair</div>
-              <div style="color:#2C2C2C;font-size:13px">pushes in →</div>
+            <div id="s4push" class="doval" style="width:150px;height:150px;background:#C8D4C0;margin-left:-40px;z-index:2">
+              <div style="color:#2C2C2C;font-size:14px;font-weight:500" id="s4push-label">right pair</div>
+              <div style="color:#2C2C2C;font-size:13px" id="s4push-dir">pushes in →</div>
             </div>
             <div style="position:absolute;bottom:60px;width:100%;text-align:center;color:#2C2C2C;font-size:15px;font-weight:500">all four corners in one bundle</div>
           </div>
           <div class="dcap">
-            <div class="dcap-1">hold elastic edge open with left hand</div>
-            <div class="dcap-2">push right nested pair down through into left hand</div>
+            <div class="dcap-1" id="s4cap1">hold elastic edge open with left hand</div>
+            <div class="dcap-2" id="s4cap2">push right nested pair down through into left hand</div>
           </div>
         </div>
       </div>
@@ -579,6 +579,26 @@ function setHand(h){
   document.getElementById('tabR').classList.toggle('active',h==='right');
   document.getElementById('tabL').classList.toggle('active',h==='left');
   document.getElementById('sdsc').innerHTML=getS()[cur].d;
+  // Swap L/R labels in diagrams
+  const isL=h==='left';
+  document.querySelectorAll('[data-hand]').forEach(el=>{
+    if(!el.dataset.orig) el.dataset.orig=el.textContent;
+    const o=el.dataset.orig, side=el.dataset.hand;
+    if(!isL){el.textContent=o;return;}
+    // For left-handed: L becomes R and R becomes L
+    if(side==='L') el.textContent=o.replace('L','R').replace('left','right');
+    else el.textContent=o.replace('R','L').replace('right','left');
+  });
+  // Flip step 4 diagram layout
+  const wrap=document.getElementById('s4wrap');
+  wrap.style.flexDirection=isL?'row-reverse':'row';
+  document.getElementById('s4hold-label').textContent=isL?'right hand open':'left hand open';
+  document.getElementById('s4push-label').textContent=isL?'left pair':'right pair';
+  document.getElementById('s4push-dir').textContent=isL?'← pushes in':'pushes in →';
+  document.getElementById('s4push').style.marginLeft=isL?'0':'-40px';
+  document.getElementById('s4push').style.marginRight=isL?'-40px':'0';
+  document.getElementById('s4cap1').textContent=isL?'hold elastic edge open with right hand':'hold elastic edge open with left hand';
+  document.getElementById('s4cap2').textContent=isL?'push left nested pair down through into right hand':'push right nested pair down through into left hand';
 }
 
 goTo(0,true);
