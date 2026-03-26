@@ -397,27 +397,32 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         </div>
       </div>
 
-      <!-- Step 7: Fold in thirds lengthwise -->
+      <!-- Step 7: Fold remaining side over -->
       <div id="sc7" class="sc">
         <div class="diag">
-          <div style="width:90%;margin-top:60px;display:flex;justify-content:center;position:relative">
-            <div class="dsheet" style="width:100%;height:260px;display:flex;padding:0">
-              <div style="flex:1;display:flex;align-items:center;justify-content:center;border-right:2px dashed #7A9E8E;border-right-style:dashed;opacity:.6"></div>
-              <div style="flex:1;display:flex;align-items:center;justify-content:center">
-                <div style="color:#2C2C2C;font-size:14px;font-weight:500">fold to here</div>
+          <div style="width:90%;height:480px;display:flex;justify-content:center;position:relative">
+            <div class="dsheet" style="width:100%;height:100%;display:flex;padding:0">
+              <!-- Candy cane side already folded (shaded) -->
+              <div style="flex:1;background:#C8D4C0;opacity:.35;border-radius:22px 0 0 22px;display:flex;align-items:center;justify-content:center">
               </div>
-              <div style="flex:1;display:flex;align-items:center;justify-content:center;border-left:2px dashed #7A9E8E;opacity:.6"></div>
+              <!-- Fold line -->
+              <div style="width:0;border-left:2px dashed #7A9E8E;opacity:.5"></div>
+              <!-- Remaining side — about to fold over -->
+              <div style="flex:1;display:flex;align-items:center;justify-content:center">
+              </div>
             </div>
-            <div style="position:absolute;left:18%;top:50%;transform:translateY(-50%)">
-              <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M4 12H36M36 12L28 6M36 12L28 18" class="darrow"/></svg>
-            </div>
-            <div style="position:absolute;right:18%;top:50%;transform:translateY(-50%)">
+            <!-- Labels -->
+            <div style="position:absolute;left:16%;top:50%;transform:translate(-50%,-50%);text-align:center;color:#2C2C2C;font-size:13px;font-weight:500;opacity:.7">candy cane<br>side folded ✓</div>
+            <div style="position:absolute;right:16%;top:50%;transform:translate(50%,-50%);text-align:center;color:#2C2C2C;font-size:13px;font-weight:500">remaining<br>side</div>
+            <!-- Fold arrow -->
+            <div style="position:absolute;right:22%;top:38%;transform:translateY(-50%)">
               <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M36 12H4M4 12L12 6M4 12L12 18" class="darrow"/></svg>
             </div>
+            <div style="position:absolute;right:26%;top:44%;color:#2C2C2C;font-size:12px;font-weight:500">fold over ←</div>
           </div>
           <div class="dcap">
-            <div class="dcap-1">fold left third to center, then right third over top</div>
-            <div class="dcap-2">like folding a letter into an envelope</div>
+            <div class="dcap-1">fold remaining side over the candy cane side</div>
+            <div class="dcap-2">you now have a long narrow rectangle</div>
           </div>
         </div>
       </div>
@@ -589,7 +594,7 @@ const SR=[
   {n:'Step 4',t:'Right into left — the candy cane appears',d:'<strong>Hold the elastic edge with your left hand</strong> to keep it open wide. Now <strong>push your right nested pair down and through into your left hand</strong>. All four corners are now bundled together. Pick the sheet up and let it hang — it should form a smooth <strong>J-shape like a candy cane</strong>. That shape is your proof all four corners are correctly nested. <em>Left-handed? Hold with right, push left through.</em>'},
   {n:'Step 5',t:'Lay it down — tuck the elastic',d:'Set the bundle down at one end of the table. The sheet forms a rough rectangle. <strong>Walk the perimeter and tuck any visible elastic underneath</strong> the sheet fabric. It doesn\'t have to be perfect — just get the elastic out of the way so your fold lines will be clean.'},
   {n:'Step 6',t:'Fold the candy cane curve over',d:'The end of the sheet where the corner bundle sits has a slight curve from the candy cane shape. <strong>Fold that curved end over toward the center</strong> — this is your first lengthwise third. The corner bundle gets tucked neatly inside the fold.'},
-  {n:'Step 7',t:'Fold the left side over — long rectangle',d:'<strong>Fold the remaining left side over</strong> on top of the first fold. You now have a long vertical rectangle with all the elastic hidden inside. This is the satisfying moment — it starts to look like something intentional.'},
+  {n:'Step 7',t:'Fold the remaining side over',d:'<strong>Fold the remaining side over</strong> on top of the candy cane side. You now have a long narrow rectangle with all the elastic hidden inside. This is the satisfying moment — it starts to look like something intentional.'},
   {n:'Step 8',t:'Fold in half',d:'<strong>Fold the far end down toward you</strong> — bringing it halfway down the length of the rectangle. You now have a shorter, thicker rectangle. One more fold to go.'},
   {n:'Step 9',t:'Final fold — perfect square. Done.',d:'<strong>Fold the near end up over everything</strong>. Set it down. That is a <strong>perfect flat square — no elastic showing, no lumps</strong>. Every time. Store it on a shelf or slide it inside a matching pillowcase with the flat sheet for a completely tidy bundle.'}
 ];
