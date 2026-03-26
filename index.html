@@ -328,15 +328,22 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
       <div id="sc6" class="sc">
         <div class="diag">
           <div style="width:90%;height:410px;display:flex;align-items:center;justify-content:center">
-            <div class="dsheet" style="width:260px;height:340px;transform:rotate(45deg)">
-              <div class="dbadge" style="top:16px;left:16px;transform:rotate(-45deg)"><div>bundle</div><div>top-left</div></div>
-              <div style="position:absolute;left:50%;top:20px;bottom:20px;border-left:2px dashed #7A9E8E;opacity:.4"></div>
-              <div class="dcenter" style="transform:rotate(-45deg)">lay flat — smooth out</div>
+            <div class="dsheet" style="width:220px;height:380px">
+              <div class="dbadge" style="top:16px;left:50%;transform:translateX(-50%)"><div>bundle here</div></div>
+              <!-- Candy cane curve shape at top -->
+              <svg style="position:absolute;top:50px;left:50%;transform:translateX(-50%)" width="120" height="80" viewBox="0 0 120 80" fill="none">
+                <path d="M20,80 L20,30 Q20,5 50,5 Q80,5 80,30 L80,45" stroke="#7A9E8E" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+                <path d="M90,80 L90,45" stroke="#7A9E8E" stroke-width="3" stroke-linecap="round" opacity=".35"/>
+              </svg>
+              <!-- Horizontal fold line — where the curve folds over -->
+              <div style="position:absolute;top:38%;left:20px;right:20px" class="ddash"></div>
+              <div style="position:absolute;top:38%;left:50%;transform:translate(-50%,-150%);color:#2C2C2C;font-size:12px;font-weight:500;white-space:nowrap">fold here ↓</div>
+              <div class="dcenter" style="margin-top:60px">remaining ⅔</div>
             </div>
           </div>
           <div class="dcap">
-            <div class="dcap-1">lay sheet flat on surface — bundle in one corner</div>
-            <div class="dcap-2">smooth out — sheet should form a clean rectangle</div>
+            <div class="dcap-1">fold the candy cane curve end over</div>
+            <div class="dcap-2">this is your first lengthwise third</div>
           </div>
         </div>
       </div>
