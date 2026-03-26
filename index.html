@@ -98,7 +98,7 @@ main{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
 .handedness-toggle{display:flex;background:var(--white);border:1px solid var(--linen-dark);border-radius:100px;padding:2px;gap:2px}
 .htab{padding:4px 14px;font-family:var(--sans);border:none;cursor:pointer;border-radius:100px;background:transparent;color:var(--ink-mid);font-size:12px;transition:background .2s,color .2s}
 .htab.active{background:var(--ink);color:var(--white);font-weight:500}
-.illus{position:relative;height:500px;background:#F5F0EB;overflow:hidden;border-bottom:1px solid var(--linen-dark)}
+.illus{position:relative;height:580px;background:#F5F0EB;overflow:hidden;border-bottom:1px solid var(--linen-dark)}
 .step-badge{position:absolute;top:12px;left:12px;background:var(--white);border:1px solid var(--linen-dark);border-radius:100px;padding:3px 12px;font-size:11px;color:var(--ink-mid);z-index:10;font-weight:500}
 .sc{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;pointer-events:none}
 .sc.on{opacity:1;pointer-events:all}
@@ -324,37 +324,43 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         </div>
       </div>
 
-      <!-- Step 6: Hang and check the candy cane shape -->
+      <!-- Step 6: Candy cane check + fold diagram -->
       <div id="sc6" class="sc">
-        <div class="diag">
-          <div style="width:90%;height:410px;display:flex;align-items:center;justify-content:center">
-            <svg width="200" height="380" viewBox="0 0 200 380" fill="none">
-              <!-- J-shape: straight down then hook curves bottom-right -->
-              <path d="M70,50 L70,280 Q70,340 130,340 Q190,340 190,280 L190,240" stroke="#7A9E8E" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
-              <path d="M70,50 L70,280 Q70,340 130,340 Q190,340 190,280 L190,240" stroke="#EDE8E1" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
-              <!-- Second straight line parallel -->
-              <line x1="100" y1="50" x2="100" y2="240" stroke="#7A9E8E" stroke-width="22" stroke-linecap="round" opacity=".3"/>
-              <line x1="100" y1="50" x2="100" y2="240" stroke="#EDE8E1" stroke-width="16" stroke-linecap="round"/>
-              <!-- Bundle badge at top -->
-              <rect x="30" y="10" rx="12" width="120" height="36" fill="#B8C5CC"/>
-              <text x="90" y="25" text-anchor="middle" fill="#2C2C2C" font-size="12" font-weight="500" font-family="'DM Sans',sans-serif">all 4 corners</text>
-              <text x="90" y="39" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">bundled here</text>
-              <!-- Vertical dashed reference line -->
-              <line x1="85" y1="55" x2="85" y2="230" stroke="#7A9E8E" stroke-width="1.5" stroke-dasharray="6 4" opacity=".5"/>
-              <!-- Downward arrows showing gravity/hang -->
-              <path d="M50,100 L50,140" stroke="#7A9E8E" stroke-width="1.5" opacity=".5"/>
-              <path d="M50,140 L45,133 M50,140 L55,133" stroke="#7A9E8E" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
-              <path d="M50,170 L50,210" stroke="#7A9E8E" stroke-width="1.5" opacity=".5"/>
-              <path d="M50,210 L45,203 M50,210 L55,203" stroke="#7A9E8E" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
-              <!-- Hook label at bottom -->
-              <rect x="115" y="290" rx="10" width="80" height="32" fill="#B8C5CC"/>
-              <text x="155" y="304" text-anchor="middle" fill="#2C2C2C" font-size="11" font-weight="500" font-family="'DM Sans',sans-serif">J-shape</text>
-              <text x="155" y="317" text-anchor="middle" fill="#2C2C2C" font-size="10" font-family="'DM Sans',sans-serif">forms here</text>
+        <div class="diag" style="gap:16px">
+          <!-- Candy cane J-shape -->
+          <div style="width:90%;display:flex;justify-content:center">
+            <svg width="160" height="260" viewBox="0 0 200 340" fill="none">
+              <path d="M70,50 L70,260 Q70,320 130,320 Q190,320 190,260 L190,220" stroke="#7A9E8E" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
+              <path d="M70,50 L70,260 Q70,320 130,320 Q190,320 190,260 L190,220" stroke="#EDE8E1" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="100" y1="50" x2="100" y2="220" stroke="#7A9E8E" stroke-width="22" stroke-linecap="round" opacity=".3"/>
+              <line x1="100" y1="50" x2="100" y2="220" stroke="#EDE8E1" stroke-width="16" stroke-linecap="round"/>
+              <rect x="30" y="8" rx="12" width="120" height="36" fill="#B8C5CC"/>
+              <text x="90" y="23" text-anchor="middle" fill="#2C2C2C" font-size="12" font-weight="500" font-family="'DM Sans',sans-serif">all 4 corners</text>
+              <text x="90" y="37" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">bundled here</text>
+              <rect x="118" y="268" rx="10" width="76" height="28" fill="#B8C5CC"/>
+              <text x="156" y="280" text-anchor="middle" fill="#2C2C2C" font-size="11" font-weight="500" font-family="'DM Sans',sans-serif">J-shape</text>
+              <text x="156" y="292" text-anchor="middle" fill="#2C2C2C" font-size="10" font-family="'DM Sans',sans-serif">forms here</text>
             </svg>
           </div>
-          <div class="dcap">
-            <div class="dcap-1">pick up sheet by the bundle — let it hang freely</div>
-            <div class="dcap-2">smooth J-shape confirms all corners are correctly nested</div>
+          <!-- Fold thirds diagram below -->
+          <div style="width:90%;display:flex;justify-content:center;position:relative">
+            <div class="dsheet" style="width:100%;height:160px;display:flex;padding:0;border-radius:16px">
+              <div style="flex:1;display:flex;align-items:center;justify-content:center;border-right:2px dashed #7A9E8E;opacity:.6"></div>
+              <div style="flex:1;display:flex;align-items:center;justify-content:center">
+                <div style="color:#2C2C2C;font-size:14px;font-weight:500">fold to here</div>
+              </div>
+              <div style="flex:1;display:flex;align-items:center;justify-content:center;border-left:2px dashed #7A9E8E;opacity:.6"></div>
+            </div>
+            <div style="position:absolute;left:18%;top:50%;transform:translateY(-50%)">
+              <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M4 12H36M36 12L28 6M36 12L28 18" class="darrow"/></svg>
+            </div>
+            <div style="position:absolute;right:18%;top:50%;transform:translateY(-50%)">
+              <svg width="40" height="24" viewBox="0 0 40 24" fill="none"><path d="M36 12H4M4 12L12 6M4 12L12 18" class="darrow"/></svg>
+            </div>
+          </div>
+          <div class="dcap" style="margin-top:8px">
+            <div class="dcap-1">fold candy cane side first, then regular side over</div>
+            <div class="dcap-2">like folding a letter into an envelope</div>
           </div>
         </div>
       </div>
