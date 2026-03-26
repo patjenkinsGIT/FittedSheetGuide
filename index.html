@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 <title>How to Fold a Fitted Sheet — Finally, a Guide That Actually Works</title>
 <meta name="description" content="The candy cane method — a genuinely new way to fold a fitted sheet into a perfect square every time. Interactive step-by-step guide, left and right handed.">
@@ -141,43 +141,6 @@ summary::after{content:'+';font-size:1.1rem;color:var(--ink-light);transition:tr
 details[open] summary::after{transform:rotate(45deg)}
 details p{padding-top:.75rem;font-size:.93rem;color:var(--ink);line-height:1.7;font-weight:400}
 footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align:center;padding:2rem 1.5rem;font-size:.85rem;color:var(--ink-mid)}
-
-/* Progress bar */
-.progress-bar{height:3px;background:var(--linen-dark)}
-.progress-fill{height:100%;background:var(--sage);width:11.11%;transition:width .35s ease}
-
-/* Replay button */
-.replay-btn{display:inline-block;margin-top:.5rem;padding:4px 14px;font-family:var(--sans);font-size:12px;color:var(--sage);background:var(--sage-light);border:1px solid var(--sage);border-radius:100px;cursor:pointer;transition:background .15s}
-.replay-btn:hover{background:var(--linen)}
-
-/* Reduced motion */
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
-  .sc{transition:none}
-}
-
-/* Mobile responsive */
-@media(max-width:480px){
-  header{padding:2rem 1rem 1.75rem}
-  main{padding:0 .75rem}
-  nav{flex-wrap:wrap;justify-content:center;gap:.5rem}
-  .demo-shell{overflow:clip;border-radius:12px}
-  .demo-header{flex-wrap:wrap;gap:.5rem;justify-content:center;padding:.75rem 1rem;position:sticky;top:0;z-index:20}
-  .demo-label{width:100%;text-align:center}
-  .illus{height:auto;min-height:220px;aspect-ratio:520/298}
-  .step-text{padding:1.25rem 1.25rem .75rem}
-  .step-title{font-size:clamp(1.1rem,5vw,1.25rem)}
-  .step-desc{font-size:.9rem}
-  .nav-bar{padding:.75rem 1rem 1.25rem}
-  .nav-btn{width:48px;height:48px;font-size:18px}
-  .dot{height:9px;width:9px}
-  .dot.on{width:24px}
-  .fold-panel>div:first-child{transform:scale(0.75);transform-origin:center top}
-  .candy-callout{flex-direction:column;gap:.5rem}
-  .tip{flex-direction:column;gap:.5rem}
-  .tip-num{font-size:1.1rem}
-  #lightbox button{width:44px !important;height:44px !important;font-size:20px !important;top:-16px !important;right:-8px !important}
-}
 </style>
 </head>
 <body>
@@ -226,14 +189,13 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         <button class="htab" id="tabL" onclick="setHand('left')">Left-handed</button>
       </div>
     </div>
-    <div class="progress-bar"><div class="progress-fill" id="pbar"></div></div>
 
     <div class="illus">
       <div class="step-badge" id="bdg">Step 1 of 9</div>
 
       <!-- Step 1: mittens on near corners, seam side out — PORTRAIT orientation -->
       <div id="sc1" class="sc on">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 1: Slide hands into near corners of fitted sheet, seam side out">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <!-- portrait sheet: 220w x 240h -->
           <rect x="130" y="2" width="220" height="240" rx="10" fill="#f5f0e8" stroke="#d4c9b0" stroke-width="1.5"/>
           <!-- FAR corners (top — user walks to these) -->
@@ -264,7 +226,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
       <!-- Step 2: walk near up into far — nested pairs centered at y=110 -->
       <div id="sc2" class="sc">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 2: Walk near corners up into far corners to create nested pairs">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <!-- nested pairs — centered at y=110 -->
           <ellipse cx="175" cy="110" rx="68" ry="48" fill="#fdfcf9" stroke="#6b7c6e" stroke-width="2"/>
           <ellipse cx="175" cy="92" rx="42" ry="26" fill="#ede6d6" stroke="#d4c9b0" stroke-width="1.5"/>
@@ -285,7 +247,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
       <!-- Step 3: re-mitten both nested pairs (hospital gown) — centered at y=115 -->
       <div id="sc3" class="sc">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 3: Re-mitten both nested pairs, hands back inside the pockets">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <!-- left nested pair with hand going in -->
           <ellipse cx="148" cy="115" rx="72" ry="66" fill="#fdfcf9" stroke="#d4c9b0" stroke-width="2"/>
           <ellipse cx="148" cy="90" rx="48" ry="30" fill="#e8ede9" stroke="#6b7c6e" stroke-width="2" style="animation:remittenPulse 1.8s ease-in-out infinite"/>
@@ -309,7 +271,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
       <!-- Step 4: right into left — candy cane appears -->
       <div id="sc4" class="sc">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 4: Push right nested pair into left hand, all four corners bundle together">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <!-- left hand open — cx=155, rx=65, ry=75 -->
           <ellipse cx="155" cy="108" rx="72" ry="80" fill="#fdfcf9" stroke="#6b7c6e" stroke-width="2"/>
           <ellipse cx="155" cy="78" rx="48" ry="30" fill="#e8ede9" stroke="#6b7c6e" stroke-width="1.5"/>
@@ -328,7 +290,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
       <!-- Step 5: THE CANDY CANE — pick up and check -->
       <div id="sc5" class="sc">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 5: Sheet hanging in a J-shape candy cane, proving all four corners are nested">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <g style="transform-origin:228px 50px;animation:candySwing 3s ease-in-out infinite">
             <!-- bundle at top -->
             <ellipse cx="228" cy="46" rx="66" ry="36" fill="#fdfcf9" stroke="#6b7c6e" stroke-width="2"/>
@@ -351,7 +313,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
       <!-- Step 6: tuck elastic -->
       <div id="sc6" class="sc">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 6: Sheet laid flat as a rectangle, tuck all elastic edges underneath">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <line x1="30" y1="232" x2="450" y2="232" stroke="#d4c9b0" stroke-width="1.5"/>
           <rect x="80" y="46" width="320" height="178" rx="8" fill="#f5f0e8" stroke="#d4c9b0" stroke-width="1.5"/>
           <!-- corner bundle -->
@@ -373,7 +335,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
       <!-- Step 7: fold candy cane curve over — first lengthwise third -->
       <div id="sc7" class="sc">
-        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif" role="img" aria-label="Step 7: Fold the candy cane curve end over as the first lengthwise third">
+        <svg width="100%" viewBox="-20 -15 520 298" font-family="'DM Sans',sans-serif">
           <line x1="30" y1="232" x2="450" y2="232" stroke="#d4c9b0" stroke-width="1.5"/>
           <!-- base sheet -->
           <rect x="70" y="60" width="340" height="160" rx="6" fill="#f5f0e8" stroke="#d4c9b0" stroke-width="1.5"/>
@@ -410,7 +372,6 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
           </div>
         </div>
         <p id="lb8" style="font-size:12px;color:#6b7c6e;font-weight:500;font-family:'DM Sans',sans-serif;text-align:center;margin:0">folding left side over — long rectangle...</p>
-        <button class="replay-btn" onclick="lf()" aria-label="Replay fold animation">↻ Replay</button>
       </div>
 
       <!-- Step 9: fold in half then final fold -->
@@ -429,7 +390,6 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
           </div>
         </div>
         <p id="lb9" style="font-size:12px;color:#6b7c6e;font-weight:500;font-family:'DM Sans',sans-serif;text-align:center;margin:0">fold in half, then final fold — perfect square!</p>
-        <button class="replay-btn" onclick="wf()" aria-label="Replay fold animation">↻ Replay</button>
       </div>
 
     </div><!-- /illus -->
@@ -444,7 +404,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
     <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,23,20,.85);align-items:center;justify-content:center;padding:1.5rem;cursor:pointer" onclick="closeLightbox()">
       <div style="position:relative;max-width:480px;width:100%" onclick="event.stopPropagation()">
         <img id="lb-img" src="" alt="" style="width:100%;display:block;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3)">
-        <button onclick="closeLightbox()" aria-label="Close lightbox" style="position:absolute;top:-12px;right:-12px;width:32px;height:32px;border-radius:50%;border:none;background:var(--white);color:var(--ink);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2)">✕</button>
+        <button onclick="closeLightbox()" style="position:absolute;top:-12px;right:-12px;width:32px;height:32px;border-radius:50%;border:none;background:var(--white);color:var(--ink);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2)">✕</button>
       </div>
     </div>
 
@@ -455,9 +415,9 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
     </div>
 
     <div class="nav-bar">
-      <button class="nav-btn" id="bpv" onclick="nav(-1)" disabled aria-label="Previous step">←</button>
-      <div class="dots" id="dts" role="tablist" aria-label="Step navigation"></div>
-      <button class="nav-btn" id="bnx" onclick="nav(1)" aria-label="Next step">→</button>
+      <button class="nav-btn" id="bpv" onclick="nav(-1)" disabled>←</button>
+      <div class="dots" id="dts"></div>
+      <button class="nav-btn" id="bnx" onclick="nav(1)">→</button>
     </div>
   </div>
 
@@ -571,8 +531,7 @@ const SL=SR.map((s,i)=>{
 let hand='right',cur=0,ft=null;
 function getS(){return hand==='right'?SR:SL;}
 const dts=document.getElementById('dts');
-for(let i=0;i<9;i++){const d=document.createElement('div');d.className='dot';d.setAttribute('role','tab');d.setAttribute('aria-label','Go to step '+(i+1));d.onclick=(i=>()=>goTo(i))(i);dts.appendChild(d);}
-const prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+for(let i=0;i<9;i++){const d=document.createElement('div');d.className='dot';d.onclick=(i=>()=>goTo(i))(i);dts.appendChild(d);}
 
 function goTo(i,skip){
   const p=getS()[cur];
@@ -593,7 +552,6 @@ function goTo(i,skip){
   document.getElementById('bdg').textContent='Step '+(cur+1)+' of 9';
   const pv=document.getElementById('bpv'),nx=document.getElementById('bnx');
   pv.disabled=cur===0;nx.disabled=cur===8;
-  document.getElementById('pbar').style.width=((cur+1)/9*100)+'%';
   clearTimeout(ft);
   if(cur===7)lf();
   if(cur===8)wf();
@@ -611,7 +569,6 @@ function setHand(h){
 
 function lf(){
   const pR=document.getElementById('pRS'),pL=document.getElementById('pLS'),lb=document.getElementById('lb8');
-  if(prefersReduced){pL.style.transition='none';pL.style.transform='rotateY(180deg)';lb.textContent='✓ long rectangle — two more folds to go';return;}
   pR.style.transition='none';pL.style.transition='none';pR.style.transform='';pL.style.transform='';
   lb.textContent='folding left side over — long rectangle...';
   requestAnimationFrame(()=>setTimeout(()=>{
@@ -627,7 +584,6 @@ function lf(){
 
 function wf(){
   const pT=document.getElementById('pTS'),pB=document.getElementById('pBS'),lb=document.getElementById('lb9');
-  if(prefersReduced){pB.style.transition='none';pB.style.transform='rotateX(-180deg)';pT.style.transition='none';pT.style.transform='rotateX(180deg)';lb.textContent='✓ perfect square — no elastic showing!';return;}
   pT.style.transition='none';pB.style.transition='none';pT.style.transform='';pB.style.transform='';
   lb.textContent='folding in half...';
   requestAnimationFrame(()=>setTimeout(()=>{
