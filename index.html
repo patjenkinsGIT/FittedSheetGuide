@@ -279,47 +279,74 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         </div>
       </div>
 
-      <!-- Step 4: Right into left — candy cane appears -->
+      <!-- Step 4: Right into left — candy cane appears (J-shape proof) -->
       <div id="sc4" class="sc">
         <div class="diag">
-          <div id="s4wrap" style="width:90%;height:410px;display:flex;align-items:center;justify-content:center;position:relative">
-            <div id="s4hold" class="doval" style="width:180px;height:180px;z-index:1">
-              <div style="color:#2C2C2C;font-size:14px;font-weight:500" id="s4hold-label">left hand open</div>
-              <div style="color:#2C2C2C;font-size:13px">holds elastic</div>
-            </div>
-            <div id="s4push" class="doval" style="width:150px;height:150px;background:#C8D4C0;margin-left:-40px;z-index:2">
-              <div style="color:#2C2C2C;font-size:14px;font-weight:500" id="s4push-label">right pair</div>
-              <div style="color:#2C2C2C;font-size:13px" id="s4push-dir">← pushes in</div>
-            </div>
-            <div style="position:absolute;bottom:60px;width:100%;text-align:center;color:#2C2C2C;font-size:15px;font-weight:500">all four corners in one bundle</div>
+          <div style="width:90%;height:460px;display:flex;align-items:center;justify-content:center">
+            <svg width="220" height="380" viewBox="0 0 220 380" fill="none" style="animation:candySwing 3s ease-in-out infinite;transform-origin:100px 30px">
+              <path d="M90,40 L90,280 Q90,340 150,340 Q210,340 210,280 L210,220" stroke="#7A9E8E" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
+              <path d="M90,40 L90,280 Q90,340 150,340 Q210,340 210,280 L210,220" stroke="#EDE8E1" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="120" y1="40" x2="120" y2="220" stroke="#7A9E8E" stroke-width="24" stroke-linecap="round" opacity=".3"/>
+              <line x1="120" y1="40" x2="120" y2="220" stroke="#EDE8E1" stroke-width="18" stroke-linecap="round"/>
+              <ellipse cx="105" cy="30" rx="60" ry="26" fill="#EDE8E1" stroke="#7A9E8E" stroke-width="2"/>
+              <text x="105" y="26" text-anchor="middle" fill="#2C2C2C" font-size="12" font-weight="500" font-family="'DM Sans',sans-serif">all 4 corners</text>
+              <text x="105" y="40" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">bundled here</text>
+              <rect x="10" y="290" width="100" height="36" rx="12" fill="#B8C5CC"/>
+              <text x="60" y="305" text-anchor="middle" fill="#2C2C2C" font-size="13" font-weight="500" font-family="'DM Sans',sans-serif">J-shape</text>
+              <text x="60" y="319" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">candy cane</text>
+            </svg>
           </div>
           <div class="dcap">
-            <div class="dcap-1" id="s4cap1">hold elastic edge open with left hand</div>
-            <div class="dcap-2" id="s4cap2">push right nested pair down through into left hand</div>
+            <div class="dcap-1">pick it up and let it hang — you should see the candy cane</div>
+            <div class="dcap-2">smooth J-shape confirms all four corners are correctly nested</div>
           </div>
         </div>
       </div>
 
-      <!-- Step 5: The candy cane check -->
+      <!-- Step 5: Lay it down — tuck the elastic -->
       <div id="sc5" class="sc">
         <div class="diag">
-          <div style="width:90%;height:410px;display:flex;align-items:center;justify-content:center">
-            <svg width="220" height="360" viewBox="0 0 220 360" fill="none" style="animation:candySwing 3s ease-in-out infinite;transform-origin:100px 30px">
-              <path d="M90,40 L90,260 Q90,320 150,320 Q210,320 210,260 L210,200" stroke="#7A9E8E" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
-              <path d="M90,40 L90,260 Q90,320 150,320 Q210,320 210,260 L210,200" stroke="#EDE8E1" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="120" y1="40" x2="120" y2="200" stroke="#7A9E8E" stroke-width="24" stroke-linecap="round" opacity=".3"/>
-              <line x1="120" y1="40" x2="120" y2="200" stroke="#EDE8E1" stroke-width="18" stroke-linecap="round"/>
-              <ellipse cx="105" cy="30" rx="60" ry="26" fill="#EDE8E1" stroke="#7A9E8E" stroke-width="2"/>
-              <text x="105" y="26" text-anchor="middle" fill="#2C2C2C" font-size="12" font-weight="500" font-family="'DM Sans',sans-serif">all 4 corners</text>
-              <text x="105" y="40" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">bundled here</text>
-              <rect x="10" y="270" width="100" height="36" rx="12" fill="#B8C5CC"/>
-              <text x="60" y="285" text-anchor="middle" fill="#2C2C2C" font-size="13" font-weight="500" font-family="'DM Sans',sans-serif">J-shape</text>
-              <text x="60" y="299" text-anchor="middle" fill="#2C2C2C" font-size="11" font-family="'DM Sans',sans-serif">candy cane</text>
-            </svg>
+          <div style="width:90%;margin-top:40px;display:flex;justify-content:center;position:relative">
+            <div class="dsheet" style="width:100%;height:400px">
+              <div class="dbadge" style="top:16px;left:16px"><div>bundle</div><div>top-left</div></div>
+              <div class="dcenter">tuck elastic edges under</div>
+              <!-- Tuck arrows on all four edges -->
+              <svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none" viewBox="0 0 300 400" fill="none" preserveAspectRatio="none">
+                <!-- Top edge tuck arrows -->
+                <path d="M100,12 Q100,0 100,-5" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M150,12 Q150,0 150,-5" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M200,12 Q200,0 200,-5" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <!-- Bottom edge tuck arrows -->
+                <path d="M100,388 Q100,400 100,405" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M150,388 Q150,400 150,405" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M200,388 Q200,400 200,405" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <!-- Left edge tuck arrows -->
+                <path d="M12,120 Q0,120 -5,120" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M12,200 Q0,200 -5,200" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M12,280 Q0,280 -5,280" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <!-- Right edge tuck arrows -->
+                <path d="M288,120 Q300,120 305,120" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M288,200 Q300,200 305,200" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                <path d="M288,280 Q300,280 305,280" stroke="#7A9E8E" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+              </svg>
+              <!-- Tuck label badges on edges -->
+              <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%)">
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none"><path d="M10 14L10 2M10 2L5 7M10 2L15 7" class="darrow"/></svg>
+              </div>
+              <div style="position:absolute;bottom:-10px;left:50%;transform:translateX(-50%)">
+                <svg width="20" height="16" viewBox="0 0 20 16" fill="none"><path d="M10 2L10 14M10 14L5 9M10 14L15 9" class="darrow"/></svg>
+              </div>
+              <div style="position:absolute;left:-14px;top:50%;transform:translateY(-50%)">
+                <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M14 10L2 10M2 10L7 5M2 10L7 15" class="darrow"/></svg>
+              </div>
+              <div style="position:absolute;right:-14px;top:50%;transform:translateY(-50%)">
+                <svg width="16" height="20" viewBox="0 0 16 20" fill="none"><path d="M2 10L14 10M14 10L9 5M14 10L9 15" class="darrow"/></svg>
+              </div>
+            </div>
           </div>
           <div class="dcap">
-            <div class="dcap-1">pick up sheet by the bundle — let it hang freely</div>
-            <div class="dcap-2">smooth J-shape confirms all corners are correctly nested</div>
+            <div class="dcap-1">lay sheet flat — tuck all elastic edges underneath</div>
+            <div class="dcap-2">doesn't have to be perfect — just get the elastic out of the way</div>
           </div>
         </div>
       </div>
@@ -596,17 +623,6 @@ function setHand(h){
   document.getElementById('tabR').classList.toggle('active',h==='right');
   document.getElementById('tabL').classList.toggle('active',h==='left');
   document.getElementById('sdsc').innerHTML=getS()[cur].d;
-  // Flip step 4 diagram for handedness
-  const isL=h==='left';
-  const wrap=document.getElementById('s4wrap');
-  wrap.style.flexDirection=isL?'row-reverse':'row';
-  document.getElementById('s4hold-label').textContent=isL?'right hand open':'left hand open';
-  document.getElementById('s4push-label').textContent=isL?'left pair':'right pair';
-  document.getElementById('s4push-dir').textContent=isL?'pushes in →':'← pushes in';
-  document.getElementById('s4push').style.marginLeft=isL?'0':'-40px';
-  document.getElementById('s4push').style.marginRight=isL?'-40px':'0';
-  document.getElementById('s4cap1').textContent=isL?'hold elastic edge open with right hand':'hold elastic edge open with left hand';
-  document.getElementById('s4cap2').textContent=isL?'push left nested pair down through into right hand':'push right nested pair down through into left hand';
 }
 
 goTo(0,true);
