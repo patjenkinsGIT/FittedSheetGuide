@@ -93,6 +93,15 @@ main{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
 .section-head h2{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2rem);color:var(--ink);margin-bottom:.4rem}
 .section-head p{color:var(--ink-mid);font-size:.95rem;font-weight:400}
 .demo-shell{background:var(--white);border:1px solid var(--linen-dark);border-radius:16px;overflow:hidden;box-shadow:0 2px 20px rgba(26,23,20,.06);margin-bottom:3rem}
+.demo-body{display:flex;flex-direction:column}
+@media(min-width:760px){
+  .demo-shell{max-width:900px;margin-left:auto;margin-right:auto;position:relative;left:50%;transform:translateX(-50%);width:calc(100% - 3rem)}
+  .demo-body{flex-direction:row}
+  .demo-body .illus{flex:1;height:auto;min-height:480px;border-bottom:none;border-right:1px solid var(--linen-dark)}
+  .demo-body .demo-right{flex:0 0 280px;display:flex;flex-direction:column}
+  .demo-body .step-text{flex:1}
+  .demo-body #photo-wrap{border-bottom:none;border-top:1px solid var(--linen-dark)}
+}
 .demo-header{background:var(--linen);border-bottom:1px solid var(--linen-dark);padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .demo-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-light);font-weight:500}
 .handedness-toggle{display:flex;background:var(--white);border:1px solid var(--linen-dark);border-radius:100px;padding:2px;gap:2px}
@@ -206,6 +215,7 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
       <button class="nav-btn" id="bnx2" onclick="nav(1)">→</button>
     </div>
 
+    <div class="demo-body">
     <div class="illus">
       <div class="step-badge" id="bdg">Step 1 of 9</div>
 
@@ -462,11 +472,20 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
 
     </div><!-- /illus -->
 
-    <!-- Photo thumbnail -->
-    <div id="photo-wrap" style="display:none;border-bottom:1px solid var(--linen-dark);padding:.6rem 1.5rem;background:var(--linen);display:flex;align-items:center;gap:.75rem;cursor:pointer" onclick="openLightbox()">
-      <img id="step-photo" src="" alt="" style="width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--linen-dark);flex-shrink:0">
-      <span style="font-size:.85rem;color:var(--sage);font-weight:500">View photo →</span>
-    </div>
+      <div class="demo-right">
+        <div class="step-text">
+          <p class="step-num" id="snum">Step 1</p>
+          <h3 class="step-title" id="stit"></h3>
+          <p class="step-desc" id="sdsc"></p>
+        </div>
+
+        <!-- Photo thumbnail -->
+        <div id="photo-wrap" style="display:none;border-bottom:1px solid var(--linen-dark);padding:.6rem 1.5rem;background:var(--linen);display:flex;align-items:center;gap:.75rem;cursor:pointer" onclick="openLightbox()">
+          <img id="step-photo" src="" alt="" style="width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--linen-dark);flex-shrink:0">
+          <span style="font-size:.85rem;color:var(--sage);font-weight:500">View photo →</span>
+        </div>
+      </div>
+    </div><!-- /demo-body -->
 
     <!-- Lightbox -->
     <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:1000;background:rgba(26,23,20,.85);align-items:center;justify-content:center;padding:1.5rem;cursor:pointer" onclick="closeLightbox()">
@@ -474,12 +493,6 @@ footer{background:var(--linen);border-top:1px solid var(--linen-dark);text-align
         <img id="lb-img" src="" alt="" style="width:100%;display:block;border-radius:12px;box-shadow:0 8px 40px rgba(0,0,0,.3)">
         <button onclick="closeLightbox()" style="position:absolute;top:-12px;right:-12px;width:32px;height:32px;border-radius:50%;border:none;background:var(--white);color:var(--ink);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.2)">✕</button>
       </div>
-    </div>
-
-    <div class="step-text">
-      <p class="step-num" id="snum">Step 1</p>
-      <h3 class="step-title" id="stit"></h3>
-      <p class="step-desc" id="sdsc"></p>
     </div>
 
     <div class="nav-bar">
