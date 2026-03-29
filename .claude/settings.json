@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dig MX fittedsheetguide.com +short)",
+      "Bash(dig TXT fittedsheetguide.com +short)",
+      "mcp__claude_ai_ahrefs__site-audit-projects",
+      "mcp__claude_ai_ahrefs__site-audit-issues",
+      "mcp__claude_ai_ahrefs__site-audit-page-explorer"
+    ],
+    "additionalDirectories": [
+      "/Users/Patrick/Projects/fittedsheetguide/images"
+    ]
+  }
+}
